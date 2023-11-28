@@ -1,7 +1,7 @@
 import express from 'express';
 import { Player } from './Player';
 
-const VERSION = "use types!!!";
+const VERSION = "bet on a few more hands";
 
 const app = express();
 const player = new Player();

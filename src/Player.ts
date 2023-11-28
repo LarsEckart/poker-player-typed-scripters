@@ -17,6 +17,10 @@ export class Player {
       if (ourCards[0].rank == "K" || ourCards[0].rank == "A" || ourCards[1].rank == "K" || ourCards[1].rank == "A") {
         betCallback(gameState.current_buy_in - gameState.players[gameState.in_action].bet);
       }
+      // if we have Queen, Jack or 10
+      if (ourCards[0].rank == "Q" || ourCards[0].rank == "J" || ourCards[0].rank == "T" || ourCards[1].rank == "Q" || ourCards[1].rank == "J" || ourCards[1].rank == "T") {
+        betCallback(gameState.current_buy_in - gameState.players[gameState.in_action].bet);
+      }
     }
     betCallback(0);
   }
