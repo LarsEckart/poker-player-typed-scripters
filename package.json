@@ -1,21 +1,21 @@
 {
     "name": "poker-player-typescript",
-    "description": "TypeScript player from lean poker. http://leanpoker.org",
+    "description": "TypeScript player for Lean Poker. https://leanpoker.org",
     "version": "0.0.1",
     "private": true,
     "scripts": {
         "postinstall": "npm run build",
         "start": "node out/index.js",
-        "build": "./node_modules/.bin/typings i && ./node_modules/.bin/tsc -p ./"
+        "build": "tsc -p ."
     },
     "dependencies": {
-        "body-parser": "*",
-        "express": "*",
-        "typescript": "*",
-        "typings": "*"
+        "express": "*"
     },
     "engines": {
-        "node": "18.12.1",
-        "npm": "9.1.1"
+        "node": ">=20.10.0"
+    },
+    "devDependencies": {
+        "@types/express": "*",
+        "typescript": "*"
     }
 }
