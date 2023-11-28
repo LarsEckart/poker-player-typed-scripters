@@ -1,10 +1,10 @@
 const util = require('util')
-import { Card, Game } from './types';
+import { Card, Game, PlayingCard } from './types';
 
 
 export class Player {
   public betRequest(gameState: Game, betCallback: (bet: number) => void): void {
-    console.log(util.inspect(gameState, false, null, false  ));
+    // console.log(util.inspect(gameState, false, null, false  ));
 
     // get our hole cards
     var ourCards = gameState.players[gameState.in_action]?.hole_cards;
@@ -13,16 +13,23 @@ export class Player {
       let chenScore = this.chenValue(ourCards[0], ourCards[1]);
       console.log("chenScore: " + chenScore);
       if (chenScore > 7) {
+        console.log("betting: " + (gameState.current_buy_in - gameState.players[gameState.in_action].bet + gameState.minimum_raise));
         betCallback(gameState.current_buy_in - gameState.players[gameState.in_action].bet + gameState.minimum_raise);
-        return;
+      } else {
+        betCallback(0);
       }
+    } else {
+      betCallback(0);
     }
-    betCallback(0);
   }
 
   private chenValue(card1: Card, card2: Card) {
+    // convert card1 to a PlayingCard
+    // convert card2 to a PlayingCard
+    let playingCard1 = new PlayingCard(card1.rank, card1.suit);
+    let playingCard2 = new PlayingCard(card2.rank, card2.suit);
     let result = 0;
-    let higherCard: Card = this.determineHigherCard(card1, card2);
+    let higherCard: PlayingCard = this.determineHigherCard(playingCard1, playingCard2);
     result += higherCard.getCardValue();
 
     // Multiply pairs by 2 of one card’s value. However, minimum score for a pair is 5.
@@ -44,8 +51,8 @@ export class Player {
     4 card gap or more = -5 points. (Aces are high this step, so hands like A2, A3 etc. have a 4+ gap.)
 
     */
-    let card1Value = card1.getCardValue();
-    let card2Value = card2.getCardValue();
+    let card1Value = playingCard1.getCardValue();
+    let card2Value = playingCard2.getCardValue();
     let gap = Math.abs(card1Value - card2Value) - 1;
     if (gap > 4) {
       gap = 4;
@@ -60,7 +67,7 @@ export class Player {
   }
 
   // returns the higher card, or the first card if both cards are equal
-  private determineHigherCard(card1: Card, card2: Card): Card {
+  private determineHigherCard(card1: PlayingCard, card2: PlayingCard): PlayingCard {
     return card1.getCardValue() > card2.getCardValue() ? card1 : card2;
   }
 

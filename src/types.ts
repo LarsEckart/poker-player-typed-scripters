@@ -12,7 +12,6 @@ interface Player {
 interface Card {
     rank: string;
     suit: string;
-    getCardValue(): number;
 }
 
 interface Game {
@@ -21,6 +20,7 @@ interface Game {
     round: number;
     players: Player[];
     small_blind: number;
+    big_blind: number;
     orbits: number;
     dealer: number;
     community_cards: Card[];
@@ -29,8 +29,6 @@ interface Game {
     in_action: number;
     minimum_raise: number;
     bet_index: number;
-    bet: number;
-
 }
 
 class PlayingCard implements Card {
@@ -64,4 +62,4 @@ class PlayingCard implements Card {
     }
 }
 
-export { Player, Card, Game };
+export { Player, Card, Game, PlayingCard };

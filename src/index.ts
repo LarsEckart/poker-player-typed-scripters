@@ -1,7 +1,7 @@
 import express from 'express';
 import { Player } from './Player';
 
-const VERSION = "with algorithm";
+const VERSION = "fixed now?";
 
 const app = express();
 const player = new Player();
