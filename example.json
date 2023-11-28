@@ -1,59 +1,50 @@
 {
-       tournament_id: '656644d316d2b6000275d3a1',
-      game_id: '656647ab417b0d0002f4a89a',
-      round: 1,
-      players: [
+    "tournament_id": "656644d316d2b6000275d3a1",
+    "game_id": "656647ab417b0d0002f4a89a",
+    "round": 1,
+    "players": [
         {
-           name: 'Darth Raiser',
-           stack: 1000,
-           status: 'folded',
-           bet: 0,
-           time_used: 432259,
-           version: 'Demo player',
-           id: 0
+            "name": "Darth Raiser",
+            "stack": 1000,
+            "status": "folded",
+            "bet": 0,
+            "time_used": 432259,
+            "version": "Demo player",
+            "id": 0
         },
         {
-           name: 'Winnie the Pot',
-           stack: 998,
-           status: 'folded',
-           bet: 0,
-           time_used: 429238,
-           version: 'Demo player',
-           id: 1
+            "name": "Winnie the Pot",
+            "stack": 998,
+            "status": "folded",
+            "bet": 0,
+            "time_used": 429238,
+            "version": "Demo player",
+            "id": 1
         },
         {
-           name: 'Bluffy the Vampire',
-           stack: 994,
-           status: 'folded',
-           bet: 2,
-           time_used: 445593,
-           version: 'Demo player',
-           id: 2
+            "name": "Bluffy the Vampire",
+            "stack": 994,
+            "status": "folded",
+            "bet": 2,
+            "time_used": 445593,
+            "version": "Demo player",
+            "id": 2
         },
         {
-           name: 'typed scripters',
-           stack: 1002,
-           status: 'active',
-           bet: 4,
-           hole_cards: [
-                { rank: '10', suit: 'spades'
+            "name": "typed scripters",
+            "stack": 1002,
+            "status": "active",
+            "bet": 4,
+            "hole_cards": [
+                {
+                    "rank": "10",
+                    "suit": "spades"
                 },
-                { rank: '2', suit: 'diamonds'
+                {
+                    "rank": "10",
+                    "suit": "diamonds"
                 }
-            ],
-           time_used: 284222,
-          version: 'always 1k, log game state better',
-           id: 3
+            ]
         }
-    ],
-       small_blind: 2,
-      big_blind: 4,
-      orbits: 0,
-      dealer: 1,
-      community_cards: [],
-      current_buy_in: 4,
-      pot: 6,
-      in_action: 3,
-      minimum_raise: 2,
-       bet_index: 5
+    ]
 }

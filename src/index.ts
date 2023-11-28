@@ -1,7 +1,7 @@
 import express from 'express';
 import { Player } from './Player';
 
-const VERSION = "go all in when you have a pair or call when king or ace";
+const VERSION = "use types!!!";
 
 const app = express();
 const player = new Player();
@@ -24,6 +24,7 @@ app.post('/', (req, res) => {
         res.status(200).send('OK');
     }
 });
+
 
 const port = parseInt(process.env['PORT'] || '1337');
 const host = "0.0.0.0";
