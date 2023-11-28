@@ -1,7 +1,7 @@
 import express from 'express';
 import { Player } from './Player';
 
-const VERSION = "go all in when you have a pair or king/ace";
+const VERSION = "go all in when you have a pair or call when king or ace";
 
 const app = express();
 const player = new Player();

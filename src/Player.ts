@@ -11,9 +11,9 @@ export class Player {
     if (ourCards[0].rank == ourCards[1].rank) {
       betCallback(10000);
     }
-    // if we have King or Ace, bet 10000
+    // if we have King or Ace, call
     if (ourCards[0].rank == "K" || ourCards[0].rank == "A" || ourCards[1].rank == "K" || ourCards[1].rank == "A") {
-      betCallback(10000);
+      betCallback(gameState.current_buy_in - gameState.players[gameState.in_action].bet);
     }
     betCallback(0);
   }
