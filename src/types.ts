@@ -12,6 +12,7 @@ interface Player {
 interface Card {
     rank: string;
     suit: string;
+    getCardValue?(): number;
 }
 
 interface Game {
@@ -47,7 +48,7 @@ class PlayingCard implements Card {
     J = 6 points.
     10 to 2 = 1/2 of card value. (e.g. a 6 would be worth 3 points)
     */
-    getCardValue(): number {
+    public getCardValue(): number {
         if (this.rank == "A") {
             return 10;
         } else if (this.rank == "K") {
