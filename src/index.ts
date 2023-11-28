@@ -1,7 +1,7 @@
 import express from 'express';
 import { Player } from './Player';
 
-const VERSION = "bet on a few more hands";
+const VERSION = "with algorithm";
 
 const app = express();
 const player = new Player();
