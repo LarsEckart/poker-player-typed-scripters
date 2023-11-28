@@ -1,6 +1,9 @@
+const util = require('util')
+
+
 export class Player {
   public betRequest(gameState: any, betCallback: (bet: number) => void): void {
-    console.log(gameState);
+    console.log(util.inspect(gameState, false, null, false  ));
     betCallback(1000);
   }
 

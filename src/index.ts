@@ -1,7 +1,7 @@
 import express from 'express';
 import { Player } from './Player';
 
-const VERSION = "always 1k, log game state";
+const VERSION = "always 1k, log game state better";
 
 const app = express();
 const player = new Player();
