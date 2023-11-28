@@ -44,8 +44,8 @@ export class Player {
     4 card gap or more = -5 points. (Aces are high this step, so hands like A2, A3 etc. have a 4+ gap.)
 
     */
-    let card1Value = this.getCardValue(card1);
-    let card2Value = this.getCardValue(card2);
+    let card1Value = card1.getCardValue();
+    let card2Value = card2.getCardValue();
     let gap = Math.abs(card1Value - card2Value) - 1;
     if (gap > 4) {
       gap = 4;
